@@ -1,0 +1,22 @@
+/***************************
+*  Default styles for the
+*    EXT rgmediaimages
+* by Ringer Georg (just2b)
+***************************/  
+
+/* div for content elements */
+.rgmediaimages-content {
+  overflow:auto;
+}
+
+/* Iframe */
+.rgmediaimages-iframe {
+  border:1px solid #ccc;
+}
+
+
+/* just useful for me */
+#left .ce  .rgmi1032 .ce {
+  width:0px;
+  min-height:10px;
+}

@@ -1,0 +1,88 @@
+# /***************************
+# *  Default TS for the
+# *   EXT rgmediaimages
+# * by Ringer Georg (just2b)
+# ***************************/  
+
+
+# get the title tag for the image if there is a link for the image
+styles.content.imgtext.titleInLinkAndImg = 1
+
+plugin.rgmediaimages {
+
+  ########################################################
+  ############################## COLORS & WIDTH ##########
+
+
+	# cat=rgmediaimages/dims/e2; type=int+; label= Default width: Default width of the player
+	width = 300
+
+	# cat=rgmediaimages/dims/e2; type=int+; label= Default height: Default height of the player
+	height = 250
+
+	# cat=rgmediaimages/dims/e3; type=color; label= Background color: Backgroundcolor of the player 
+	backgroundColor = FFFFFF
+	
+	# cat=rgmediaimages/dims/e3; type=text; label= Background image: If you play MP3 of FLV files, you can use this flashvar to show a preview image or album cover. Use a url without the http:// !
+	backgroundImage = 
+
+	# cat=rgmediaimages/dims/e3; type=color; label= Foreground color:Texts / buttons color of the player 
+	foregroundColor = 000000
+
+	# cat=rgmediaimages/dims/e3; type=color; label= Highlight color:Rollover/ active color of the player 
+	highlightColor = 000000
+
+	# cat=rgmediaimages/dims/e3; type=color; label= Screen color:Color of the display background screen 
+	screenColor = 000000
+
+
+  ########################################################
+  ################################## APPEARANCE ##########
+
+	# cat=rgmediaimages/enable/e1; type=boolean; label= Use the SWFObject: Instead of the embed
+	useSwfObject = 1
+
+	# cat=rgmediaimages/enable/e3; type=boolean; label= Large controlbar:Set this to 1  to make the controlbar twice as large. This is useful to visually impaired users 
+	largeControllBar = 0
+
+
+  # cat=rgmediaimages/enable/e4; type=text; label= Logo:Set this to an image that can be put as a watermark logo in the top right corner of the display. Transparent PNG files give the best results. Use a url without the http:// !
+  logo =
+  
+  #stretch
+  
+	# cat=rgmediaimages/enable/e3; type=options[true,false,total]; label= Show digits in the controlbar:Set this to false if you don't want the elapsed/remaining time to display in the controlbar of the players. Quite handy to save some space. Set it to "total" to show the total time instead of the remaining time.
+	showDigits =true
+
+	# cat=rgmediaimages/enable/e3; type=boolean; label= Show download button:Set this to 1  to show a downloadbutton in the controlbar. 
+	showDownload = 0
+
+	# cat=rgmediaimages/enable/e3; type=boolean; label= Show fake equalizer:Set to 1 to show a fake equalizer in the display. It adds a nice graphical touch when you are playing MP3 files. 
+	showEqualizer = 0  
+
+	# cat=rgmediaimages/enable/e3; type=boolean; label= Show the load/play icons:Show or hide the play and activity icons in the middle of the display.  If set to false, the overlaid controlbar will also hide with the players 
+	showLoadPlay = 1
+  
+	# cat=rgmediaimages/enable/e3; type=boolean; label= Show volume button:Set this to false to hide the volume button and save space. 
+	showVolume = 1
+ 
+
+  ########################################################
+  #################################### PLAYBACK ##########
+
+
+  # cat=rgmediaimages/enable/e50; type=options[false,true,muted]; label= Automatically start playing:Set this to "true" to make the player automatically start playing when the page loads. If set to "muted", the player will autostart with the volume set to 0 and an unmute icon in the display. 
+  autoStart = false
+
+  # cat=rgmediaimages/enable/e50; type=options[false,true,list]; label= Repeat playing:By default, the players will stop playback after every item to preserve bandwidth (repeat=false). You can set this to "list" to playback all items in a playlist once, or to "true" to continuously playback your song/movie/playlist. (Playlists not yet supported)
+  autoRepeat = false
+
+	# cat=rgmediaimages/enable/e60; type=int+; label= Volume at startup:The default volume for playback of sounds/movies is 80, but you can set another startup value 
+	volume = 80
+	
+	# cat=rgmediaimages/enable/e70; type=boolean; label=Mootools on your website?Enable it!:To avoid a bug in IE you need to enable this if you are using mootools on the same page as the videos. 
+	mootools = 0
+	
+
+
+}

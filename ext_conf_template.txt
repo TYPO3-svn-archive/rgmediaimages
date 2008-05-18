@@ -1,0 +1,8 @@
+
+
+# cat=basic/enable/120; type=boolean; label= Rename backend fields: Rename the fields "Text w/ image" to "Text w/ media" and "Image" to "Image & Videos"
+rename = 1
+
+
+# cat=basic/enable/220; type=boolean; label= Enable video field for tt_news: Enable the field videos for the extension tt_news
+tt_news = 1

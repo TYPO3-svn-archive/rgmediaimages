@@ -1,0 +1,100 @@
+# /***************************
+# *  Default TS for the
+# *   EXT rgmediaimages
+# * by Ringer Georg (just2b)
+# ***************************/  
+
+# Videos in tt_content
+includeLibs.rgmediaimages = EXT:rgmediaimages/class.tx_rgmediaimages_fe.php
+
+
+tt_content.image.20.1.stdWrap {
+	override {
+		if	{
+			isInList {
+				current = 1	
+				substring = -3,3
+				case = upper
+			}	
+			value = FLV,SWF,RTMP,MP3,WMV,RGG
+		}
+		postCObject = COA
+		postCObject {
+					
+			10 = TEXT
+			10 {
+				current = 1
+				field = image
+				
+				postUserFunc = tx_rgmediaimages_fe->user_images
+				postUserFunc {
+					
+						conf.useSwfObject			= {$plugin.rgmediaimages.useSwfObject}
+						conf.width						= {$plugin.rgmediaimages.width}
+						conf.height						= {$plugin.rgmediaimages.height}
+						conf.backgroundColor	= {$plugin.rgmediaimages.backgroundColor}
+						conf.backgroundImage	= {$plugin.rgmediaimages.backgroundImage}
+						conf.foregroundColor	= {$plugin.rgmediaimages.foregroundColor}
+						conf.highlightColor		= {$plugin.rgmediaimages.highlightColor}
+						conf.screenColor			= {$plugin.rgmediaimages.screenColor}
+						conf.largeControllBar	= {$plugin.rgmediaimages.largeControllBar}
+						conf.showDigits				= {$plugin.rgmediaimages.showDigits}
+						conf.showDownload			= {$plugin.rgmediaimages.showDownload}
+						conf.showEqualizer		= {$plugin.rgmediaimages.showEqualizer}
+						conf.showLoadPlay			= {$plugin.rgmediaimages.showLoadPlay}
+						conf.showVolume				= {$plugin.rgmediaimages.showVolume}
+						conf.autoStart				= {$plugin.rgmediaimages.autoStart}
+						conf.autoRepeat				= {$plugin.rgmediaimages.autoRepeat}
+						conf.volume						= {$plugin.rgmediaimages.volume}	
+						conf.logo							= {$plugin.rgmediaimages.logo}
+						conf.mootools					= {$plugin.rgmediaimages.mootools}
+
+					override= TEXT
+					override{
+						field = altText
+						split.token.char = 10
+						split.token.if.isTrue = {$styles.content.imgtext.imageTextSplit}
+						split.returnKey.data = register : IMAGE_NUM_CURRENT
+					}
+
+				}
+			}
+		}	
+	}		
+}
+
+# Videos in tt_news
+
+plugin.tt_news {
+	rgmediaimages {
+		videoWrapIfAny.wrap = <div class="news-single-video"> | </div>
+		
+		singleMedia.wrap = |<br />
+		
+		caption {
+			wrap = <p class="news-single-imgcaption"> | </p>
+					trim=1
+		}
+
+		conf.useSwfObject = {$plugin.rgmediaimages.useSwfObject}
+		conf.width = {$plugin.rgmediaimages.width}
+		conf.height = {$plugin.rgmediaimages.height}
+		conf.backgroundColor = {$plugin.rgmediaimages.backgroundColor}
+		conf.backgroundImage = {$plugin.rgmediaimages.backgroundImage}
+		conf.foregroundColor = {$plugin.rgmediaimages.foregroundColor}
+		conf.highlightColor = {$plugin.rgmediaimages.highlightColor}
+		conf.screenColor = {$plugin.rgmediaimages.screenColor}
+		conf.largeControllBar = {$plugin.rgmediaimages.largeControllBar}
+		conf.showDigits = {$plugin.rgmediaimages.showDigits}
+		conf.showDownload = {$plugin.rgmediaimages.showDownload}
+		conf.showEqualizer = {$plugin.rgmediaimages.showEqualizer}
+		conf.showLoadPlay = {$plugin.rgmediaimages.showLoadPlay}
+		conf.showVolume = {$plugin.rgmediaimages.showVolume}
+		conf.autoStart = {$plugin.rgmediaimages.autoStart}
+		conf.autoRepeat = {$plugin.rgmediaimages.autoRepeat}
+		conf.volume = {$plugin.rgmediaimages.volume}
+		conf.logo = {$plugin.rgmediaimages.logo}
+		conf.mootools = {$plugin.rgmediaimages.mootools}	
+	
+	}
+}
